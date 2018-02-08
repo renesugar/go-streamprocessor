@@ -11,41 +11,39 @@ import (
 func TestProducer(t *testing.T) {
 	t.Parallel()
 
-	var _ stream.Producer = (*FakeProducer)(nil)
+	var _ stream.Producer = (*fakeProducer)(nil)
 }
 
-type FakeMessage struct {
+type fakeMessage struct {
 	value []byte
 }
 
-// Value returns the basic value
-func (m *FakeMessage) Value() []byte {
+func (m *fakeMessage) Value() []byte {
 	return m.value
 }
 
-// Value returns the basic value
-func (m *FakeMessage) SetValue(v []byte) {
+func (m *fakeMessage) SetValue(v []byte) {
 	m.value = v
 }
 
-func (m *FakeMessage) Ack() {}
+func (m *fakeMessage) Ack() {}
 
-type FakeProducer struct {
+type fakeProducer struct {
 	messages chan<- streammsg.Message
 }
 
-func (p *FakeProducer) NewMessage(value []byte) streammsg.Message {
-	return &FakeMessage{value: value}
+func (p *fakeProducer) NewMessage(value []byte) streammsg.Message {
+	return &fakeMessage{value: value}
 }
 
-func (p *FakeProducer) Messages() chan<- streammsg.Message {
+func (p *fakeProducer) Messages() chan<- streammsg.Message {
 	return p.messages
 }
 
-func (p *FakeProducer) Close() error {
+func (p *fakeProducer) Close() error {
 	return nil
 }
 
-func (p FakeProducer) Config() streamconfig.Producer {
+func (p fakeProducer) Config() streamconfig.Producer {
 	return streamconfig.Producer{}
 }
