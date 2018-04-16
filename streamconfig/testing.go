@@ -5,6 +5,7 @@ import (
 
 	"github.com/blendle/go-streamprocessor/streamconfig/inmemconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/kafkaconfig"
+	"github.com/blendle/go-streamprocessor/streamconfig/natsconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/pubsubconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/standardstreamconfig"
 	"github.com/kelseyhightower/envconfig"
@@ -21,6 +22,7 @@ func TestNewConsumer(tb testing.TB, defaults bool, options ...func(*Consumer)) C
 	if !defaults {
 		c.Inmem = inmemconfig.Consumer{Store: nil}
 		c.Kafka = kafkaconfig.Consumer{}
+		c.NATS = natsconfig.Consumer{}
 		c.Pubsub = pubsubconfig.Consumer{}
 		c.Standardstream = standardstreamconfig.Consumer{}
 		c.Logger = zap.Logger{}
@@ -66,6 +68,7 @@ func TestNewProducer(tb testing.TB, defaults bool, options ...func(*Producer)) P
 	if !defaults {
 		p.Inmem = inmemconfig.Producer{Store: nil}
 		p.Kafka = kafkaconfig.Producer{}
+		p.NATS = natsconfig.Producer{}
 		p.Pubsub = pubsubconfig.Producer{}
 		p.Standardstream = standardstreamconfig.Producer{}
 		p.Logger = zap.Logger{}

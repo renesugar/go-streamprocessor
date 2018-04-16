@@ -3,6 +3,7 @@ package streamconfig
 import (
 	"github.com/blendle/go-streamprocessor/streamconfig/inmemconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/kafkaconfig"
+	"github.com/blendle/go-streamprocessor/streamconfig/natsconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/pubsubconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/standardstreamconfig"
 	"github.com/kelseyhightower/envconfig"
@@ -18,6 +19,7 @@ func NewConsumer(options ...func(*Consumer)) (Consumer, error) {
 	config := &defaults
 	config.Inmem = inmemconfig.ConsumerDefaults
 	config.Kafka = kafkaconfig.ConsumerDefaults
+	config.NATS = natsconfig.ConsumerDefaults
 	config.Pubsub = pubsubconfig.ConsumerDefaults
 	config.Standardstream = standardstreamconfig.ConsumerDefaults
 
@@ -61,6 +63,7 @@ func NewProducer(options ...func(*Producer)) (Producer, error) {
 	config := &defaults
 	config.Inmem = inmemconfig.ProducerDefaults
 	config.Kafka = kafkaconfig.ProducerDefaults
+	config.NATS = natsconfig.ProducerDefaults
 	config.Pubsub = pubsubconfig.ProducerDefaults
 	config.Standardstream = standardstreamconfig.ProducerDefaults
 

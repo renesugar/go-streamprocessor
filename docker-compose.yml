@@ -15,6 +15,14 @@ services:
     ports:
     - "8538:8538"
 
+  nats:
+    image: nats:1.0.6
+    # uncomment to enable debugging mode
+    # entrypoint: "/gnatsd -DV"
+    ports:
+    - 4222:4222
+    - 8222:8222
+
   zookeeper:
     image: wurstmeister/zookeeper:latest # no non-latest tag available
     ports:

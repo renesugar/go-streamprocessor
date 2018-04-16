@@ -9,6 +9,7 @@ import (
 	"github.com/blendle/go-streamprocessor/streamconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/inmemconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/kafkaconfig"
+	"github.com/blendle/go-streamprocessor/streamconfig/natsconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/pubsubconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/standardstreamconfig"
 	"github.com/stretchr/testify/assert"
@@ -22,6 +23,7 @@ func TestConsumer(t *testing.T) {
 	_ = streamconfig.Consumer{
 		Inmem:           inmemconfig.Consumer{},
 		Kafka:           kafkaconfig.Consumer{},
+		NATS:            natsconfig.Consumer{},
 		Pubsub:          pubsubconfig.Consumer{},
 		Standardstream:  standardstreamconfig.Consumer{},
 		Logger:          *zap.NewNop(),
@@ -284,6 +286,7 @@ func TestProducer(t *testing.T) {
 	_ = streamconfig.Producer{
 		Inmem:           inmemconfig.Producer{},
 		Kafka:           kafkaconfig.Producer{},
+		NATS:            natsconfig.Producer{},
 		Pubsub:          pubsubconfig.Producer{},
 		Standardstream:  standardstreamconfig.Producer{},
 		Logger:          *zap.NewNop(),

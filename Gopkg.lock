@@ -18,6 +18,35 @@
   revision = "1f94cfab3dcc47159a6dcb83588baa3d8260e78a"
 
 [[projects]]
+  name = "github.com/nats-io/gnatsd"
+  packages = [
+    "conf",
+    "logger",
+    "server",
+    "server/pse",
+    "test",
+    "util"
+  ]
+  revision = "add6d7930ae6d4bff8823b28999ea87bf1bfd23d"
+  version = "v1.1.0"
+
+[[projects]]
+  name = "github.com/nats-io/go-nats"
+  packages = [
+    ".",
+    "encoders/builtin",
+    "util"
+  ]
+  revision = "062418ea1c2181f52dc0f954f6204370519a868b"
+  version = "v1.5.0"
+
+[[projects]]
+  name = "github.com/nats-io/nuid"
+  packages = ["."]
+  revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
+  version = "v1.0.0"
+
+[[projects]]
   name = "github.com/pmezard/go-difflib"
   packages = ["difflib"]
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
@@ -57,9 +86,33 @@
   revision = "35aad584952c3e7020db7b839f6b102de6271f89"
   version = "v1.7.1"
 
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = [
+    "bcrypt",
+    "blowfish",
+    "ssh/terminal"
+  ]
+  revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = [
+    "unix",
+    "windows",
+    "windows/registry",
+    "windows/svc",
+    "windows/svc/debug",
+    "windows/svc/eventlog",
+    "windows/svc/mgr"
+  ]
+  revision = "2281fa97ef7b0c26324634d5a22f04babdac8713"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5cd50c5e23880e73065368d40931e6cf0e8d55fe5ee66d2890c62105247115bd"
+  inputs-digest = "43432b8b6e5fbf49b35ab704219715015748c74a2b66bed2b9b75f902a50cb41"
   solver-name = "gps-cdcl"
   solver-version = 1

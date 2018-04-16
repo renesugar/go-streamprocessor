@@ -1,0 +1,1 @@
+package natsconfig_test

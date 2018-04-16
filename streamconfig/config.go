@@ -6,6 +6,7 @@ import (
 
 	"github.com/blendle/go-streamprocessor/streamconfig/inmemconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/kafkaconfig"
+	"github.com/blendle/go-streamprocessor/streamconfig/natsconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/pubsubconfig"
 	"github.com/blendle/go-streamprocessor/streamconfig/standardstreamconfig"
 	"github.com/kelseyhightower/envconfig"
@@ -20,6 +21,7 @@ import (
 type Consumer struct {
 	Inmem          inmemconfig.Consumer
 	Kafka          kafkaconfig.Consumer
+	NATS           natsconfig.Consumer
 	Pubsub         pubsubconfig.Consumer
 	Standardstream standardstreamconfig.Consumer
 
@@ -56,6 +58,7 @@ type Consumer struct {
 type Producer struct {
 	Inmem          inmemconfig.Producer
 	Kafka          kafkaconfig.Producer
+	NATS           natsconfig.Producer
 	Pubsub         pubsubconfig.Producer
 	Standardstream standardstreamconfig.Producer
 
