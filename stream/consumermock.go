@@ -1,14 +1,13 @@
 package stream
 
 import (
-	"github.com/blendle/go-streamprocessor/streamconfig"
 	"github.com/blendle/go-streamprocessor/streammsg"
 )
 
 // ConsumerMock is a mock implementation of the Consumer interface
 type ConsumerMock struct {
-	Configuration streamconfig.Consumer
-	MessagesChan  chan streammsg.Message
+	// Configuration streamconfig.Consumer
+	MessagesChan chan streammsg.Message
 }
 
 var _ Consumer = (*ConsumerMock)(nil)
@@ -34,7 +33,7 @@ func (c *ConsumerMock) Close() error {
 	return nil
 }
 
-// Config implements the Consumer interface for ConsumerMock.
-func (c ConsumerMock) Config() streamconfig.Consumer {
-	return c.Configuration
-}
+// // Config implements the Consumer interface for ConsumerMock.
+// func (c ConsumerMock) Config() streamconfig.Consumer {
+// 	return c.Configuration
+// }

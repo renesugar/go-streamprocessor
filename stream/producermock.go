@@ -1,14 +1,13 @@
 package stream
 
 import (
-	"github.com/blendle/go-streamprocessor/streamconfig"
 	"github.com/blendle/go-streamprocessor/streammsg"
 )
 
 // ProducerMock is a mock implementation of the Producer interface
 type ProducerMock struct {
-	Configuration streamconfig.Producer
-	MessagesChan  chan streammsg.Message
+	// Configuration streamconfig.Producer
+	MessagesChan chan streammsg.Message
 }
 
 var _ Producer = (*ProducerMock)(nil)
@@ -24,7 +23,7 @@ func (p *ProducerMock) Close() error {
 	return nil
 }
 
-// Config implements the Producer interface for ProducerMock.
-func (p ProducerMock) Config() streamconfig.Producer {
-	return p.Configuration
-}
+// // Config implements the Producer interface for ProducerMock.
+// func (p ProducerMock) Config() streamconfig.Producer {
+// 	return p.Configuration
+// }

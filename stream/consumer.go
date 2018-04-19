@@ -1,7 +1,6 @@
 package stream
 
 import (
-	"github.com/blendle/go-streamprocessor/streamconfig"
 	"github.com/blendle/go-streamprocessor/streammsg"
 )
 
@@ -31,5 +30,5 @@ type Consumer interface {
 	Close() error
 
 	// Config returns the final configuration used by the consumer.
-	Config() streamconfig.Consumer
+	// Config() streamconfig.Consumer
 }

@@ -1,7 +1,6 @@
 package stream
 
 import (
-	"github.com/blendle/go-streamprocessor/streamconfig"
 	"github.com/blendle/go-streamprocessor/streammsg"
 )
 
@@ -23,5 +22,5 @@ type Producer interface {
 	Close() error
 
 	// Config returns the final configuration used by the producer.
-	Config() streamconfig.Producer
+	// Config() streamconfig.Producer
 }
